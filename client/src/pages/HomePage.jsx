@@ -252,9 +252,9 @@ const HomePage = () => {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-100 w-full shadow mt-20 py-6">
+      <footer className="bg-gray-800 w-full shadow mt-20 py-6">
         <div className="w-[90%] mx-auto text-center">
-          <p className="text-gray-600">
+          <p className="text-slate-100">
             &copy; 2024 Your Real Estate Company. All rights reserved.
           </p>
         </div>

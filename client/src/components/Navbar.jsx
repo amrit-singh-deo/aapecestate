@@ -21,8 +21,8 @@ const Navbar = () => {
       <div
         className={`${
           toggleMenu
-            ? `bg-red-400 h-12 w-12 flex items-center justify-center lg:hidden absolute top-0 left-0`
-            : `bg-red-400 h-full w-12 flex items-center justify-center lg:hidden`
+            ? `h-12 w-12 flex items-center justify-center lg:hidden absolute top-0 left-0`
+            : `h-full w-12 flex items-center justify-center lg:hidden`
         }`}
       >
         <Hamburger size={20} toggled={toggleMenu} toggle={setToggleMenu} />
@@ -30,8 +30,8 @@ const Navbar = () => {
       <ul
         className={`${
           toggleMenu
-            ? `bg-yellow-400 flex flex-col w-full h-full items-center justify-evenly`
-            : `bg-yellow-400 hidden w-full h-full items-center justify-evenly lg:flex`
+            ? `flex flex-col w-full h-full items-center justify-evenly`
+            : `hidden w-full h-full items-center justify-evenly lg:flex`
         }`}
       >
         {navbarItems.map((item, itemIndex) => (
@@ -62,8 +62,8 @@ const NavItem = ({ item, itemIndex, totalItems, toggleMenu }) => {
     <li
       className={`${
         toggleMenu
-          ? `bg-blue-400 w-56 text-center group/item relative flex flex-col justify-center text-sm font-medium cursor-pointer`
-          : `bg-green-400 group/item relative h-full flex items-center text-sm font-medium cursor-pointer`
+          ? `w-56 text-center group/item relative flex flex-col justify-center text-sm font-medium cursor-pointer`
+          : `group/item relative h-full flex items-center text-sm font-medium cursor-pointer`
       }`}
     >
       {item.title}
@@ -71,7 +71,7 @@ const NavItem = ({ item, itemIndex, totalItems, toggleMenu }) => {
         <ul
           className={`${
             toggleMenu
-              ? `bg-purple-400`
+              ? `bg-gray-700`
               : `bg-gray-700 text-white absolute top-12 ${parentMenuClass} flex flex-col items-center justify-evenly`
           }`}
         >

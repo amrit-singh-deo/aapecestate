@@ -71,9 +71,11 @@ const HomePage = () => {
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">Cozy Apartment</h3>
                 <p className="text-gray-600 mb-4">2 beds, 1 bath, 1000 sqft</p>
-                <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
-                  View Details
-                </button>
+                <Link to={"/properties"}>
+                  <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                    View Details
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -260,12 +262,6 @@ const HomePage = () => {
           </p>
         </div>
       </footer>
-
-      <div className="flex justify-center font-semibold p-5">
-        <Link to={"/properties"}>
-          <span className="bg-emerald-300 px-4 py-2">Properties Page</span>
-        </Link>
-      </div>
     </div>
   );
 };

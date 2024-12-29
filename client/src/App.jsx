@@ -1,11 +1,12 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Navbar } from "./components";
+import { Navbar, ScrollToTop } from "./components";
 import { HomePage, PropertyPage } from "./pages";
 
 const App = () => {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" Component={HomePage} />

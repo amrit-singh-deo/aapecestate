@@ -5,13 +5,13 @@ const navbarItems = [
       { title: "Projects", link: "#" },
       { title: "Land", link: "#" },
       { title: "Flats", link: "#" },
-      { title: "Duplex / Suplex", link: "#" },
+      { title: "Duplex/Suplex", link: "#" },
       { title: "Marketing", link: "#" },
       { title: "Observations", link: "#" },
     ],
   },
   {
-    title: "Plots / Land Parcel",
+    title: "Plots/Land Parcel",
     children: [
       {
         title: "Residential",
@@ -21,7 +21,7 @@ const navbarItems = [
         ],
       },
       {
-        title: "Commercial / Industrial",
+        title: "Commercial/Industrial",
         children: [
           { title: "Purchase", link: "#" },
           { title: "Sale", link: "#" },
@@ -42,7 +42,7 @@ const navbarItems = [
         ],
       },
       {
-        title: "Simplex / Duplex / Villas",
+        title: "Simplex/Duplex/Villas",
         children: [
           { title: "Purchase", link: "#" },
           { title: "Sale", link: "#" },
@@ -56,7 +56,7 @@ const navbarItems = [
     ],
   },
   {
-    title: "Commercial / Industrial",
+    title: "Commercial/Industrial",
     children: [
       {
         title: "Shops",
@@ -101,7 +101,7 @@ const navbarItems = [
     ],
   },
   {
-    title: "Dealers / Builders",
+    title: "Dealers/Builders",
     children: [
       {
         title: "Registration",

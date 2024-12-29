@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navbar } from "./components";
-import { HomePage } from "./pages";
+import { HomePage, PropertyPage } from "./pages";
 
 const App = () => {
   return (
@@ -9,6 +9,7 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" Component={HomePage} />
+        <Route path="/properties" Component={PropertyPage} />
       </Routes>
     </BrowserRouter>
   );

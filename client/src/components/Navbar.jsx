@@ -1,48 +1,50 @@
-import React, { useMemo } from "react";
+import React from "react";
 import navbarItems from "../data/navbarItems";
 
-
-const getChildMenuPositionClass = (index, totalItems) => (index >= totalItems - 2 ? "-left-44" : "left-56");
-const getParentMenuPositionClass = (index, totalItems) => (index >= totalItems - 1 ? "right-0" : "left-0");
-
-
 const Navbar = () => {
-  const totalItems = navbarItems.length;
-
   return (
-    <nav className="bg-gray-800 text-slate-100 w-full h-10 text-nowrap">
-      <ul className="hidden lg:flex w-full h-full items-center justify-evenly">
-        {navbarItems.map((item, itemIndex) => (
-          <NavItem
-            key={`navbar-${itemIndex}-${item.title}`}
-            item={item}
-            itemIndex={itemIndex}
-            totalItems={totalItems}
-          />
-        ))}
-      </ul>
+    <nav className="h-12">
+      <div className="bg-slate-300 h-full">
+        <ul className="hidden lg:flex items-center justify-evenly h-full text-sm font-semibold">
+          {navbarItems.map((item, index) => (
+            <NavItem
+              key={`nav-${index}-${item.title}`}
+              item={item}
+              index={index}
+              totalItems={navbarItems.length}
+            />
+          ))}
+        </ul>
+      </div>
     </nav>
   );
 };
 
-
-const NavItem = ({ item, itemIndex, totalItems }) => {
-  const parentMenuClass = useMemo(() => getParentMenuPositionClass(itemIndex, totalItems), [itemIndex, totalItems]);
-  const childMenuClass = useMemo(() => getChildMenuPositionClass(itemIndex, totalItems), [itemIndex, totalItems]);
+const NavItem = ({ item, index, totalItems }) => {
+  const rightItem = index >= totalItems - 2 ? "right-0 bg-pink-400" : "left-0 bg-cyan-300";
+  const rightChildItem = index >= totalItems - 2 ? "right-full bg-red-400" : "left-full bg-emerald-400";
 
   return (
-    <li className="group/item relative h-full flex items-center text-sm font-medium cursor-pointer">
+    <li className="h-full group/item flex items-center cursor-pointer relative hover:text-white">
       {item.title}
       {item.children && (
-        <ul className={`bg-gray-700 text-white absolute top-10 ${parentMenuClass} flex flex-col items-center justify-evenly`}>
+        <ul
+          className={`z-20 group-hover/item:flex absolute top-12 ${rightItem} hidden text-black flex-col items-center text-nowrap`}
+        >
           {item.children.map((child, childIndex) => (
-            <li key={`navbar-${itemIndex}-${childIndex}-${child.title}`} className="group-hover/item:flex hidden relative w-56 text-sm font-normal py-3 px-6 hover:bg-gray-600 transition-all duration-100 group/child z-10">
+            <li
+              key={`nav-${childIndex}-${child.title}`}
+              className="group/child hover:text-white text-sm font-semibold relative w-full hover:bg-orange-300 bg-orange-400 py-3 px-5"
+            >
               {child.title}
               {child.children && (
-                <ul className={`bg-gray-700 absolute w-44 top-0 ${childMenuClass} flex-col hidden group-hover/child:flex z-20`}>
-                  {child.children.map((grandChild, grandChildIndex) => (
-                    <li key={`navbar-${itemIndex}-${childIndex}-${grandChildIndex}-${grandChild.title}`} className="py-3 px-6 hover:bg-gray-600 transition-all duration-100">
-                      {grandChild.title}
+                <ul className={`group-hover/child:flex hidden text-black flex-col items-center absolute top-0 ${rightChildItem}`}>
+                  {child.children.map((subChild, subChildIndex) => (
+                    <li
+                      key={`nav-${subChildIndex}-${subChild.title}`}
+                      className="text-sm font-semibold py-3 px-5 hover:bg-emerald-300 hover:text-white w-full"
+                    >
+                      {subChild.title}
                     </li>
                   ))}
                 </ul>

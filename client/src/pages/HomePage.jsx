@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import PropertyPage from "./PropertyPage";
 
 const HomePage = () => {
   return (
     <div className="h-full w-full overflow-x-hidden">
       <main className="w-[90%] mx-auto flex flex-col items-center justify-center mt-16">
-        
         {/* Hero Section */}
         <section className="w-full max-w-6xl text-center">
           <h1 className="text-5xl font-bold text-blue-700 mb-4">
@@ -259,6 +260,12 @@ const HomePage = () => {
           </p>
         </div>
       </footer>
+
+      <div className="flex justify-center font-semibold p-5">
+        <Link to={"/properties"}>
+          <span className="bg-emerald-300 px-4 py-2">Properties Page</span>
+        </Link>
+      </div>
     </div>
   );
 };
